@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "649ce35c-2807-4c93-836c-75e7096cd1ab",
+		"name": "Analyze_service_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Passengers statistics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "SadeghSohani",
+						"type": "default"
+					},
+					{
+						"key": "token",
+						"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_airport",
+							"value": "THRA",
+							"type": "default"
+						},
+						{
+							"key": "second_airport",
+							"value": "LOND",
+							"type": "default"
+						},
+						{
+							"key": "type",
+							"value": "out",
+							"type": "default"
+						},
+						{
+							"key": "start_date",
+							"value": "2021-05-06",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-12-06",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8001/api/passengers/statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"passengers",
+						"statistics"
+					]
+				},
+				"description": "This endpoint returns chart url. You can open that url in your browser and see chart image."
+			},
+			"response": [
+				{
+					"name": "Passengers statistics",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "SadeghSohani",
+								"type": "default"
+							},
+							{
+								"key": "token",
+								"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_airport",
+									"value": "THRA",
+									"type": "default"
+								},
+								{
+									"key": "second_airport",
+									"value": "LOND",
+									"type": "default"
+								},
+								{
+									"key": "type",
+									"value": "out",
+									"type": "default"
+								},
+								{
+									"key": "start_date",
+									"value": "2021-05-06",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2021-12-06",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8001/api/passengers/statistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"passengers",
+								"statistics"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"chartUrl\": \"https://quickchart.io:443/chart?c=%7B%0A++++++++++type%3A+%22bar%22%2C%0A++++++++++data%3A+%7B%0A++++++++++++labels%3A+%5B%222021-05%22%2C%222021-06%22%2C%222021-07%22%2C%222021-08%22%2C%222021-09%22%2C%222021-10%22%2C%222021-11%22%2C%222021-12%22%5D%2C%0A++++++++++++datasets%3A+%5B%7B%0A++++++++++++++label%3A+%22THRA%22%2C%0A++++++++++++++data%3A+%5B5%2C2%2C8%2C4%2C9%2C6%2C8%2C1%5D%0A++++++++++++%7D%2C%7B%0A++++++++++++++label%3A+%22LOND%22%2C%0A++++++++++++++data%3A+%5B6%2C3%2C5%2C6%2C8%2C5%2C4%2C2%5D%0A++++++++++++%7D%5D%0A++++++++++%7D%2C%0A++++++++++options%3A+%7B%0A++++++++++++title%3A+%7B%0A++++++++++++++display%3A+true%2C%0A++++++++++++++text%3A+%22Passengers+of+these+airports+between+2021-05-06+and+2021-12-06%22%0A++++++++++++%7D%0A++++++++++%7D%0A++++++++%7D&w=700&h=400&devicePixelRatio=1.000000&format=png&bkg=transparent\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Flights statistics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "SadeghSohani",
+						"type": "default"
+					},
+					{
+						"key": "token",
+						"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_plane_type",
+							"value": "Airbus-A320",
+							"type": "default"
+						},
+						{
+							"key": "second_plane_type",
+							"value": "Boing-MD",
+							"type": "default"
+						},
+						{
+							"key": "start_date",
+							"value": "2021-05-06",
+							"type": "default"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-02-05",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8001/api/flights/statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"flights",
+						"statistics"
+					]
+				},
+				"description": "This endpoint returns chart url. You can open that url in your browser and see chart image."
+			},
+			"response": [
+				{
+					"name": "Flights statistics",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "SadeghSohani",
+								"type": "default"
+							},
+							{
+								"key": "token",
+								"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_plane_type",
+									"value": "Airbus-A320",
+									"type": "default"
+								},
+								{
+									"key": "second_plane_type",
+									"value": "Boing-MD",
+									"type": "default"
+								},
+								{
+									"key": "start_date",
+									"value": "2021-05-06",
+									"type": "default"
+								},
+								{
+									"key": "end_date",
+									"value": "2022-02-05",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8001/api/flights/statistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"flights",
+								"statistics"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"chartUrl\": \"https://quickchart.io:443/chart?c=%7B%0A++++++++++type%3A+%22bar%22%2C%0A++++++++++data%3A+%7B%0A++++++++++++labels%3A+%5B%222021-05%22%2C%222021-06%22%2C%222021-07%22%2C%222021-08%22%2C%222021-09%22%2C%222021-10%22%2C%222021-11%22%2C%222021-12%22%2C%222022-01%22%5D%2C%0A++++++++++++datasets%3A+%5B%7B%0A++++++++++++++label%3A+%22Airbus-A320%22%2C%0A++++++++++++++data%3A+%5B38%2C25%2C41%2C34%2C28%2C36%2C37%2C28%2C0%5D%0A++++++++++++%7D%2C%7B%0A++++++++++++++label%3A+%22Boing-MD%22%2C%0A++++++++++++++data%3A+%5B34%2C35%2C44%2C27%2C35%2C34%2C23%2C32%2C0%5D%0A++++++++++++%7D%5D%0A++++++++++%7D%2C%0A++++++++++options%3A+%7B%0A++++++++++++title%3A+%7B%0A++++++++++++++display%3A+true%2C%0A++++++++++++++text%3A+%22Flights+done+by+Airbus-A320+and+Boing-MD+between+2021-05-06+and+2022-02-05%22%0A++++++++++++%7D%0A++++++++++%7D%0A++++++++%7D&w=700&h=400&devicePixelRatio=1.000000&format=png&bkg=transparent\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Carriers statistics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "SadeghSohani",
+						"type": "default"
+					},
+					{
+						"key": "token",
+						"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_carrier",
+							"value": "Emirates",
+							"type": "default"
+						},
+						{
+							"key": "second_carrier",
+							"value": "Japan Airlines",
+							"type": "default"
+						},
+						{
+							"key": "start_date",
+							"value": "2021-05-06",
+							"type": "default"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-12-20",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8001/api/carriers/statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"carriers",
+						"statistics"
+					]
+				},
+				"description": "This endpoint returns chart url. You can open that url in your browser and see chart image."
+			},
+			"response": [
+				{
+					"name": "Carriers statistics",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "SadeghSohani",
+								"type": "default"
+							},
+							{
+								"key": "token",
+								"value": "53b6b06ef254ea0cf69c5bb87d4a8ad5e38ada8d6dbb92cca9aa29bd6f4e19eb",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_carrier",
+									"value": "Emirates",
+									"type": "default"
+								},
+								{
+									"key": "second_carrier",
+									"value": "Japan Airlines",
+									"type": "default"
+								},
+								{
+									"key": "start_date",
+									"value": "2021-05-06",
+									"type": "default"
+								},
+								{
+									"key": "end_date",
+									"value": "2021-12-20",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8001/api/carriers/statistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"carriers",
+								"statistics"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"chartUrl\": \"https://quickchart.io:443/chart?c=%7B%0A++++++++++type%3A+%22bar%22%2C%0A++++++++++data%3A+%7B%0A++++++++++++labels%3A+%5B%222021-05%22%2C%222021-06%22%2C%222021-07%22%2C%222021-08%22%2C%222021-09%22%2C%222021-10%22%2C%222021-11%22%2C%222021-12%22%5D%2C%0A++++++++++++datasets%3A+%5B%7B%0A++++++++++++++label%3A+%22Emirates%22%2C%0A++++++++++++++data%3A+%5B2703%2C5784%2C9177%2C4624%2C4569%2C5034%2C5791%2C1792%5D%0A++++++++++++%7D%2C%7B%0A++++++++++++++label%3A+%22Japan+Airlines%22%2C%0A++++++++++++++data%3A+%5B5630%2C6989%2C5890%2C7422%2C3227%2C8643%2C4054%2C3754%5D%0A++++++++++++%7D%5D%0A++++++++++%7D%2C%0A++++++++++options%3A+%7B%0A++++++++++++title%3A+%7B%0A++++++++++++++display%3A+true%2C%0A++++++++++++++text%3A+%22Total+sale+of+Emirates+and+Japan+Airlines+between+2021-05-06+and+2021-12-20%22%0A++++++++++++%7D%0A++++++++++%7D%0A++++++++%7D&w=700&h=400&devicePixelRatio=1.000000&format=png&bkg=transparent\"\n}"
+				}
+			]
+		}
+	]
+}
