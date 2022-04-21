@@ -27,13 +27,13 @@ class AnalyzeController extends Controller
 
         $username = $request->header('username');
         $token = $request->header('token');
-        if (is_null($username) || is_null($token)) {
+        if ($username == '' || $token == '') {
             return response()->json(['message' => 'Please send username and token.'], 400);
         }
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://172.17.0.1:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
@@ -52,7 +52,7 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://172.17.0.1:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
@@ -159,7 +159,7 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://172.17.0.1:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
@@ -178,7 +178,7 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://172.17.0.1:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
@@ -262,7 +262,7 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://172.17.0.1:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);

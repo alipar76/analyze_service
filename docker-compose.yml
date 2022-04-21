@@ -1,8 +1,9 @@
-version: "3.8"
+version: "3.3"
 
 services:
     analyze:
         image: "nginx:stable-alpine"
+        container_name: analyze_server
         ports:
             - "8001:80"
         volumes:
@@ -10,10 +11,19 @@ services:
             - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
         depends_on:
             - php
+        networks:
+            - analyze
 
     php:
         build:
             context: ./dockerfiles
             dockerfile: php.dockerfile
+        container_name: analyze_php
         volumes:
             - ./:/var/www/html:delegated
+        networks:
+            - analyze
+
+networks:
+    analyze:
+        driver: bridge
