@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://hackr.io/tutorials/microservices/logo-microservices.svg?ver=1557508246" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://hackr.io/tutorials/microservices/logo-microservices.svg?ver=1557508246" width="150"></a></p>
 
 ## Flight reservation system
 
