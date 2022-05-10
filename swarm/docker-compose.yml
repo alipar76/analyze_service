@@ -10,7 +10,7 @@ services:
       placement:
         constraints: [node.role == manager]
   main:
-    image: ghazals1121/swarm_phase2/main
+    image: ghazals1121/swarm_phase2:main
     ports:
       - 8000:8000
     deploy:
