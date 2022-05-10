@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  visualizer:
+    image: dockersamples/visualizer
+    ports:
+      - 8001:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+  main:
+    image: ghazals1121/swarm_phase2/main
+    ports:
+      - 8000:8000
+    deploy:
+      replicas: 2
+  analyze:
+    image: ghazals1121/swarm_phase3
+    ports:
+      - 8002:8002
+    deploy:
+      replicas: 2

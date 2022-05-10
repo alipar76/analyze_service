@@ -33,8 +33,8 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'token' => $token
-        ])->post('http://172.17.0.1:7000/api/user/auth');
+            'tocken' => $token
+        ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
 
@@ -52,8 +52,8 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'token' => $token
-        ])->post('http://172.17.0.1:8000/api/flights/filter', [
+            'tocken' => $token
+        ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
 
@@ -159,8 +159,8 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'token' => $token
-        ])->post('http://172.17.0.1:7000/api/user/auth');
+            'tocken' => $token
+        ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
 
@@ -178,8 +178,8 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'token' => $token
-        ])->post('http://172.17.0.1:8000/api/flights/filter', [
+            'tocken' => $token
+        ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
 
@@ -262,8 +262,8 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'token' => $token
-        ])->post('http://172.17.0.1:7000/api/user/auth');
+            'tocken' => $token
+        ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
 
@@ -276,7 +276,7 @@ class AnalyzeController extends Controller
         $flights = Http::withHeaders([
             'username' => $username,
             'tocken' => $token
-        ])->post('http://172.17.0.1:8000/api/flights/filter', [
+        ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
 
@@ -312,9 +312,7 @@ class AnalyzeController extends Controller
                         $second_plane_type_data[$labels[$i]]++;
                     }
                 }
-
             }
-
         }
 
         $chart = new QuickChart(array(
