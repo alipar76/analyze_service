@@ -15,8 +15,9 @@ This is a simple project about flight reservation system for practice microservi
 Please run the following commands to run services:
 
 ```
-docker network create main_net
-docker compose up
+sudo docker network create main_net
+sudo docker run --rm composer install
+sudo docker compose up --build
 ```
 
 

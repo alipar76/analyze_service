@@ -33,7 +33,7 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
@@ -52,7 +52,7 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
@@ -159,7 +159,7 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
@@ -178,7 +178,7 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);
@@ -262,7 +262,7 @@ class AnalyzeController extends Controller
 
         $check_auth = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://authentication:7000/api/user/auth');
 
         $check_auth = json_decode($check_auth);
@@ -275,7 +275,7 @@ class AnalyzeController extends Controller
 
         $flights = Http::withHeaders([
             'username' => $username,
-            'tocken' => $token
+            'token' => $token
         ])->post('http://main:8000/api/flights/filter', [
             'datetime' => [$request->start_date, $request->end_date],
         ]);

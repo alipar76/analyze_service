@@ -18,9 +18,23 @@ services:
             dockerfile: php.dockerfile
         container_name: analyze_php
         volumes:
-            - ./:/var/www/html:delegated
+            - ./:/var/www/html
         networks:
             - main_net
+    composer:
+        build:
+            context: ./dockerfiles
+            dockerfile: composer.dockerfile
+        container_name: analyze_composer
+        volumes:
+            - ./:/var/www/html
+    artisan:
+        build:
+            context: ./dockerfiles
+            dockerfile: php.dockerfile
+        volumes:
+            - ./:/var/www/html
+        entrypoint: ["php", "/var/www/html/artisan"]
 networks:
     main_net:
         external: true
