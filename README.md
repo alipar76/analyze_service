@@ -16,13 +16,13 @@ Please run the following commands to run services:
 
 ```
 sudo docker network create main_net
-sudo docker run --rm composer install
 sudo docker compose up --build
+sudo docker compose run --rm composer install
 ```
 
 **Note : if you have error when open project in `localhost:8001` try run bellow commands.**
 
-error: The stream or file "/var/www/laravel/app/storage/logs/laravel.log" could not be opened...
+Error: The stream or file "/var/www/laravel/app/storage/logs/laravel.log" could not be opened...\
 Run command `sudo chmod o+w ./storage/ -R` in project directory.
 
 If you have error that says about key, run `sudo docker compose run --rm php artisan key:generate` command to generate key for laravel project.
